@@ -1,15 +1,22 @@
+import Head from "next/head";
 import { DUMMY_MEETUPS } from "..";
 import MeetupDetail from "../../components/meetups/MeetupDetail";
 import { getMeetupById, getMeetupsPaths } from "../../helpers/fetchdata";
 
 const MetupDetails = ({meetUpData}) => {
     return (
-        <MeetupDetail
-            image={meetUpData.image}
-            title={meetUpData.title}
-            address={meetUpData.address}
-            description={meetUpData.description}
-        />
+        <>
+            <Head>
+                <title>{meetUpData.title}</title>
+                <meta name="description" content={meetUpData.description} />
+            </Head>
+            <MeetupDetail
+                image={meetUpData.image}
+                title={meetUpData.title}
+                address={meetUpData.address}
+                description={meetUpData.description}
+            />
+        </>
     );
 };
 
