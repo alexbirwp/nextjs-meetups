@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     const ids = await getMeetupsPaths();
     const paths = ids.map(id => ({params: {meetupId: id}}))
     return {
-        fallback: true,
+        fallback: false,
         paths
     }
 }
