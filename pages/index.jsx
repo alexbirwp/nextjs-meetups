@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
+import Head from 'next/head';
 import MeetupList from "../components/meetups/MeetupList";
 import { getAllMeetups } from "../helpers/fetchdata";
 
 const HomePage = (props) => {
   return (
+    <>
+    <Head>
+      <title>React Meetups</title>
+      <meta name="description" content="Next meetups list" />
+    </Head>
     <MeetupList meetups={props.meetups}></MeetupList>
+    </>
   );
 };
 

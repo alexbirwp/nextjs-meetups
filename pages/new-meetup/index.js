@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import NewMeetupForm from '../../components/meetups/NewMeetupForm';
 
@@ -15,7 +16,15 @@ const NewMeetup = () => {
         const newdata = await response.json();
         router.push('/');
     }
-    return <NewMeetupForm onAddMeetup={addMeetupHandler}></NewMeetupForm>
+    return (
+        <>
+        <Head>
+            <title>Add new meetup</title>
+            <meta name="description" content="Add new meetup" />
+        </Head>
+        <NewMeetupForm onAddMeetup={addMeetupHandler}></NewMeetupForm>
+        </>
+    )
 };
 
 
