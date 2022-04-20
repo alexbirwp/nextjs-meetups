@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { DUMMY_MEETUPS } from "..";
 import MeetupDetail from "../../components/meetups/MeetupDetail";
 import { getMeetupById, getMeetupsPaths } from "../../helpers/fetchdata";
 
@@ -24,7 +23,7 @@ export async function getStaticPaths() {
     const ids = await getMeetupsPaths();
     const paths = ids.map(id => ({params: {meetupId: id}}))
     return {
-        fallback: false,
+        fallback: true,
         paths
     }
 }
