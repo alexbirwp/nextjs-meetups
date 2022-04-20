@@ -1,6 +1,8 @@
 import { FIREBASE_URL } from "./api_urls";
 
+
 const fetchMeetups = async () => {
+    console.log(process.env.FIREBASE_URL);
     const response = await fetch(FIREBASE_URL);
     const meetups = await response.json();
     return meetups;
